@@ -10,6 +10,6 @@ git clone https://github.com/DaringCuteSeal/wallpapers.git
 
 (**Only if you don't clone my repository**) and then, get all the external resources (located on /resources) written on README.md that exists on every single wallpaper directory and place it *relative to the .blend file*. The path should be written on the file. *This might not always be needed, please read the README file*. If you encounter magenta-colored lighting/texture, you can change the file path to the correct image.
 
-Lastly, Install [Blender](https://www.blender.org) and run it, then change whatever you want and render it. Don't forget to save the image.
+Lastly, Install [Blender](https://www.blender.org) and run it, open the file, and then change whatever you want and render it. Don't forget to save the image.
 
 You can ask me if you have any question but please search your problem on the web first.
