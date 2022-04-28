@@ -2,7 +2,11 @@
 
 All the art here is made with [Blender](https://www.blender.org). I provide .blend files for all the wallpapers here so you can render your own image. You can also learn, remix, or tweak them, if you want.
 
-First, you need to get the corresponding .blend file.  You can either get it directly from GitHub by selecting the correct .blend file, right-clicking on *Raw* button and saving the link as the file, or cloning my repository (`git clone https://github.com/DaringCuteSeal/wallpapers.git`).
+First, you need to get the corresponding .blend file.  You can either get it directly from GitHub by selecting the correct .blend file, clicking on the *Download* button and saving the file, or cloning my repository:
+
+```
+git clone https://github.com/DaringCuteSeal/wallpapers.git
+```
 
 (**Only if you don't clone my repository**) and then, get all the external resources (located on /resources) written on README.md that exists on every single wallpaper directory and place it *relative to the .blend file*. The path should be written on the file. *This might not always be needed, please read the README file*. If you encounter magenta-colored lighting/texture, you can change the file path to the correct image.
 
