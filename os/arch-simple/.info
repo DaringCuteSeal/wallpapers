@@ -1,0 +1,9 @@
+name="Arch - Simple"
+parsable_name="arch-simple"
+desc="Simple Arch Linux-branded wallpaper."
+
+category="os"
+
+variants=(
+[light]="arch-simple.png"
+)
