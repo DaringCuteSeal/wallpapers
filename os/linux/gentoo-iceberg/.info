@@ -1,6 +1,0 @@
-name="Gentoo Iceberg"
-variants=(light dark)
-
-variant_default=light
-variant_dark="gentoo-iceberg-dark.png"
-variant_light="gentoo-iceberg.png"

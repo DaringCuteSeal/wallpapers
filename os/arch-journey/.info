@@ -1,0 +1,10 @@
+name="Arch Journey"
+parsable_name="arch-journey"
+desc="Penguins on a \"learning curve\"."
+
+category="os"
+
+variants=(
+[light]="arch-journey.png"
+[dark]="arch-journey-dark.png"
+)

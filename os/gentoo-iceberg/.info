@@ -1,0 +1,13 @@
+# First ever .info !!!! :)
+# vim: filetype=sh
+
+name="Gentoo Iceberg"
+parsable_name="gentoo-iceberg"
+desc="Penguins on top of a Gentoo-shaped iceberg. Made for Gentoo's 2022 LiveCD artwork contest."
+
+category="os"
+
+variants=(
+[light]="gentoo-iceberg.png"
+[dark]="gentoo-iceberg-dark.png"
+)

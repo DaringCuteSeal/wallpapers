@@ -1,0 +1,23 @@
+# vim: filetype=sh
+
+declare -A categories=(
+	[os]="Operating System"
+	[nature]="Nature"
+	[animals]="Animals"
+	[misc]="Miscellaneous"
+	[programming]="Programming"
+)
+
+# OS
+# i hate legal stuff, is this correct? :(
+description_os="Branded wallpapers related to an operating system.<br>
+	<b>Disclaimer: I am not sponsored/affiliated/endorsed with any projects/companies mentioned below and any trademarked brands mentioned belong to their respective owner.</b>"
+
+# Nature
+description_nature="Nature-related wallpapers."
+
+# Animals
+description_animals="Minimalistic solid wallpapers with an animal."
+
+# Miscellaneous
+description_misc="Miscellaneous wallpapers."

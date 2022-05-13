@@ -1,0 +1,9 @@
+name="Blue Penguin"
+parsable_name="blue-penguin"
+desc="Penguin with blue background."
+
+category="animals"
+
+variants=(
+[light]="blue-penguin.png"
+)
