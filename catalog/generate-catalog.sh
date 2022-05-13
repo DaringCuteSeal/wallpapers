@@ -35,9 +35,53 @@ warn(){
 	echo -e "[!] $1"
 }
 
-# Function to parse the JSON file
-parse_json() {
-	jq "$1" "$2"
+# Function to write to the HTML file,
+# with the specified level of indentation
+write(){
+
+	if [[ -z "$2" ]]
+	then
+		text="$1"
+		echo -en "${text}" >> "$out_html"
+	else
+		text="$1"
+		# Is there any better way to do this lol
+		for z in `seq 1 $2`; do tabs+='\t'; done
+		echo -en "${tabs}${text}" >> "$out_html"
+		unset tabs
+	fi
+}
+
+
+# Same as before but don't add tabs
+write_nt(){
+	echo -en "$1" >> "$out_html"
+}
+
+# Same as before but take input from stdin
+write_stdin(){
+	cat >> "$out_html" < /dev/stdin
+}
+
+# Same as before but this is for the events.js file
+write_js(){
+	if [[ -z "$2" ]]
+	then
+		text="$1"
+		echo -en "${text}" >> "$out_previews"
+	else
+		text="$1"
+		# Is there any better way to do this lol
+		for z in `seq 1 $2`; do tabs+='\t'; done
+		echo -en "${tabs}${text}" >> "$out_previews"
+		unset tabs
+	fi
+
+}
+
+# Same as before but use stdin...
+write_js_stdin(){
+	cat >> "$out_previews" < /dev/stdin
 }
 
 # Find all .info files. There shouldn't be any whitespace on the file path so this should work fine.
@@ -55,9 +99,15 @@ fi
 
 mkdir -p "$out_dir" || exit $?
 
+# Copy extra files
+work "Copying files..."
+cp "$dir/styles.css" "$dir/events.js" "$out_dir"
+print_done
+
 # Setup directory for the document output
 doc_dir="$out_dir"
 out_html="$doc_dir/index.html"
+out_previews="$doc_dir/previews.js"
 
 info "Writing document output to '$out_dir'"
 
@@ -79,8 +129,8 @@ cat > "$out_html" << EOF
 <html>
 <head>
 	<title>Wallpapers catalog</title>
+	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="/index.css">
-	<link rel="stylesheet" href="syles.css">
 	<meta charset=utf-8>
 </head>
 <body>
@@ -98,7 +148,7 @@ mkdir -p "$preview_dir" || exit $?
 info "Writing previews to '$preview_dir'"
 
 # Generate categories
-source "config"
+source "$dir/config"
 work "Generating navigation for categories..."
 
 # The j temporary variable is used to determine
@@ -109,18 +159,18 @@ work "Generating navigation for categories..."
 j=0
 for i in "${!categories[@]}"
 do
-	echo -en "\t\t\t<a href=\"#${i}\">${categories[$i]}</a>" >> "$out_html"
+	write "<a href=\"#${i}\">${categories[$i]}</a>" 3
 	j=$(($j+1))
 	if [[ $j -lt ${#categories[@]} ]]
 	then
-		echo " &bull;" >> "$out_html"
+		write_nt " &bull;"
 	fi
 done
 unset j
 
-cat >> "$out_html" << EOF
+write_stdin << EOF
 
-		</p>
+	</p>
 EOF
 
 print_done
@@ -152,44 +202,180 @@ do
 			subinfo "Preview for $filename already exists, skipping..."
 		else
 			# Generate the preview image
+
 			subwork "Generating preview for $filename... "
-			convert -geometry 590x331 "../${dir}/${filename}" "$out_dir/previews/${filename%*.png}-preview.webp"
+			convert -geometry 590x331 "$dir/../$category/$parsable_name/$filename" "$out_dir/previews/${filename%*.png}-preview.webp"
 			print_done
 		fi
 
 	done
 
-
-	# Add current wallpaper to its corresponding category
+	# Add current wallpaper index to its corresponding category
 	# GOD CAN I HAVE 2 DIMENSIONAL ARRAYS?
-	#eval "category_$category+=("$parsable_name")"
-	#subinfo "Added '$name' to category '${categories[$category]}'"
+	eval "category_$category+=($i)"
+	subinfo "Added '$name' to category '${categories[$category]}'"
 
 	# Unset previous variables
 	# These are hard-coded!
-	unset name dir category variants filename
+	unset name category variants filename
 
 done
 
-exit 0
+set +e
+
 # XXX huh.. correct? idk i my grammar broke. fix later
 info "Generating HTML previews..."
-for i in "${!categories}"
+
+declare -A variants
+for i in "${!categories[@]}"
 do
-	work "Working on '${categories[$i]}'\n"
+	category_name="${categories[$i]}"
+	category_now="$i"
+	work "Working on '$category_name'\n"
+
+	# Write a "section".. or whatever it's called
+	write "<h1 id="$category_now">$category_name</h1>\n" 1
+
+	# Write description
+	category_desc="$(eval "echo \"\${description_${category_now}}\"")"
+	if [[ -z "$category_desc" ]]
+	then
+		write "<p><i>(no description provided)</i></p>\n" 1
+	else
+		write "<p>$category_desc</p>\n" 1
+	fi
 
 	# I went here after working on
 	# the JavaScript code after a couple
 	# days and I hate non-object-oriented
 	# programming. Gah.
-	category_counts="$(eval \"echo \"\${\#category_$category[@]}\"\")"
-	echo "$category_counts"
+	# anyways,
+	# Now write the actual previews for all
+	# the wallpapers
 
-	for (( j=0; j<${category_counts}; j++ ))
-	do
-		echo a
-	done
+	category_counts="$(eval "echo \"\${#category_$category_now[@]}\"")"
+	
+	if [[ $category_counts -gt 0 ]]
+	then
+
+		indexes="$(eval "echo \${category_$category_now[@]}")"
+
+		for k in $indexes
+		do
+			source "${infos[$k]}"
+
+			write_stdin << EOF
+	<div id="$parsable_name" class="wall-preview">
+		<div class="img-box">
+EOF
+			for l in "${!variants[@]}"
+			do
+				write "<img class=\"preview-img-$parsable_name\" src=\"previews/${variants[$l]%*.png}-preview.webp\" alt=\"$name ($l)\" title=\"$name ($l)\">\n" 3
+
+			done
+
+			write "</div>\n" 2
+
+			write_stdin << EOF
+		<div class="info-box">
+			<p>
+			<b>Name:</b> $name<br>
+			<b>Description:</b> $desc<br>
+			<b>Variants:</b>
+EOF
+			for l in "${!variants[@]}"
+			do
+				write "<button class=\"$parsable_name-vars\">$l</button>\n" 4
+			done
+
+			write "<br>\n" 4
+
+			write "<b>Links:</b> " 3
+
+			m=0
+			for l in "${variants[@]}"
+			do
+				write_nt "<a href=\"https://raw.githubusercontent.com/DaringCuteSeal/wallpapers/main/$category/$parsable_name/$l\">$l</a>"
+				m=$(($m+1))
+				if [[ $m -lt ${#variants[@]} ]]
+				then
+					write_nt " &bull; "
+				fi
+			done
+			write_nt "\n</p>\n"
+			unset m
+
+			write_stdin << EOF
+			<p>
+			<a href="https://github.com/DaringCuteSeal/wallpapers/tree/main/$category/$parsable_name/">GitHub Page</a>
+			<br>
+			<a class="copy" href="#$parsable_name">Link back to here (click to copy)</a>
+			</p>
+		</div>
+	</div>
+EOF
+		
+		done
+	else
+		info "There aren't any wallpapers for category '$category_now'"
+		write "<p>There aren't any wallpapers for this category.</p>\n\n" 1
+	fi
+
+	unset parsable_name category category_name category_desc 
+	j=$(($j+1))
 done
 	
+# Write the script tag and end the document
+work "Ending document..."
+write_stdin << EOF
+	<script src="previews.js"></script>
+	<script src="events.js"></script>
+</body>
+</html>
+EOF
+print_done
+
+# Generate the previews.js data that
+# will be used by events.js
+vars_str(){
+	echo -n "["
+	k=0
+	for j in "${!variants[@]}"
+	do
+		echo -n "'$j'"
+		k=$(($k+1))
+		if [[ $k -lt ${#variants[@]} ]]
+		then
+			echo -n ", "
+		fi
+	done
+	echo -n "]"
+	unset k
+}
+
+work "Generating previews JSON..." # and yes it isn't JSON but hey it's called "JavaScript Object Notation" so...
+cat > "$out_previews" <<< "var previews = ["
 
 
+m=0
+for (( i=0; i<${#infos[@]}; i++ ))
+do
+	source "${infos[$i]}"
+
+	write_js_stdin << EOF
+	{
+		'name': '$parsable_name',
+EOF
+
+	m=$(($m+1))
+	write_js "'variants': `vars_str`\n" 2
+	write_js "}" 1
+
+	if [[ $m -lt ${#infos[@]} ]]
+	then
+		write_js ",\n"
+	fi
+done
+write_js "\n]"
+
+print_done
