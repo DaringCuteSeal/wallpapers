@@ -78,11 +78,6 @@ write(){
 }
 
 
-# Same as before but don't add tabs
-write_nt(){
-	echo -en "$1" >> "$out_html"
-}
-
 # Same as before but take input from stdin
 write_stdin(){
 	cat >> "$out_html" < /dev/stdin
@@ -182,13 +177,14 @@ work "Generating navigation for categories..."
 # need a bullet.
 # and yes this is a bit dumb, fix this and make a PR if you want.
 j=0
+write "" 3
 for i in "${!categories[@]}"
 do
-	write "<a href=\"#${i}\">${categories[$i]}</a>" 3
+	write "<a href=\"#${i}\">${categories[$i]}</a>"
 	j=$(($j+1))
 	if [[ $j -lt ${#categories[@]} ]]
 	then
-		write_nt " &bull;"
+		write " &bull; "
 	fi
 done
 unset j
@@ -320,14 +316,14 @@ EOF
 			m=0
 			for l in "${variants[@]}"
 			do
-				write_nt "<a href=\"https://raw.githubusercontent.com/DaringCuteSeal/wallpapers/main/$category/$parsable_name/$l\">$l</a>"
+				write "<a href=\"https://raw.githubusercontent.com/DaringCuteSeal/wallpapers/main/$category/$parsable_name/$l\">$l</a>"
 				m=$(($m+1))
 				if [[ $m -lt ${#variants[@]} ]]
 				then
-					write_nt " &bull; "
+					write " &bull; "
 				fi
 			done
-			write_nt "\n</p>\n"
+			write "\n</p>\n"
 			unset m
 
 			write_stdin << EOF
