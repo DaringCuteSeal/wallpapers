@@ -1,13 +1,6 @@
 
 
 @media (prefers-color-scheme: dark) {
-	body {
-		background-color: #2A303D;
-		color: #D4EEFC;
-	}
-	a {
-		color: #8BBFDF;
-	}
 	.btn-var-curr {
 		background-color: #3B4656;
 		cursor: default;
@@ -28,13 +21,6 @@
 }
 
 @media (prefers-color-scheme: light) {
-	body {
-		background-color: #EEF3F7;
-		color: #0C0C0C;
-	}
-	a {
-		color: #346681;
-	}
 	.btn-var-curr {
 		background-color: #797D80;
 		color: white;
