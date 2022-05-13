@@ -1,14 +1,39 @@
 #!/bin/bash
 # Script to generate an HTML wallpaper catalog.
+# Copyright (C) 2022 DaringCuteSeal (or.. my real name.. Cikitta).
 
-# I'm probably the only one who needs it
-# but I just want to share the code.
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # Dependencies:
 # find (findutils or other), ImageMagick
 
 # Extra files required:
 # config, styles.css, events.js, and previews.js
+
+# A bit of explanation:
+# This script parses the "config" file located in this
+# directory to write all the categories existing.
+# Then, it looks for any .info files found
+# at the root of this project's directory (previous
+# directory, relatively), parses each file, and
+# writes elements to an HTML file.
+# Lastly, it generates a previews.js file which
+# Stores name of the wallpapers alongside its
+# variants which will be used by events.js to
+# attach event listeners.
+
+# And why would I make this? Learning.
 
 # Message functions
 info(){
