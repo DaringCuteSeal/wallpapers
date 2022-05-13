@@ -315,9 +315,9 @@ EOF
 			write "<b>Links:</b> " 3
 
 			m=0
-			for l in "${variants[@]}"
+			for l in "${!variants[@]}"
 			do
-				write "<a href=\"https://raw.githubusercontent.com/DaringCuteSeal/wallpapers/main/$category/$parsable_name/$l\">$l</a>"
+				write "<a href=\"https://raw.githubusercontent.com/DaringCuteSeal/wallpapers/main/$category/$parsable_name/${variants[$l]}\">${variants[$l]} ($l)</a>"
 				m=$(($m+1))
 				if [[ $m -lt ${#variants[@]} ]]
 				then
