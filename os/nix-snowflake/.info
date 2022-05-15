@@ -1,0 +1,10 @@
+name="Nix Snowflake"
+parsable_name="nix-snowflake"
+desc="Nix snowflake stumbled by a some little penguins."
+
+category="os"
+
+variants=(
+[light]="nix-snowflake.png"
+[dark]="nix-snowflake-dark.png"
+)
