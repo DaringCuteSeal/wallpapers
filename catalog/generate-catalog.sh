@@ -337,6 +337,7 @@ EOF
 	</div>
 EOF
 		
+		subinfo "Wrote '$name'"
 		done
 	else
 		info "There aren't any wallpapers for category '$category_now'"
