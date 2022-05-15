@@ -5,4 +5,4 @@ This wallpaper is made for my first Arch-versary <3.
 "Arch.. It's a journey."
 
 External resources:
-- pink_sunrise.hdr - ../../../resources/pink_sunrise.hdr
+- pink_sunrise.hdr - ../../resources/pink_sunrise.hdr
