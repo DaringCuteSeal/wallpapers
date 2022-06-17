@@ -1,0 +1,10 @@
+name="Abstract Wave"
+parsable_name="abstract-wave"
+desc="Abstract geometric wave, made with Blender's Geometry Node"
+
+category="misc"
+
+variants=(
+[blue-pink]="abstract-wave-blue-pink.png"
+[blue]="abstract-wave-blue.png"
+)
