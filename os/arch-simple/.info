@@ -6,4 +6,5 @@ category="os"
 
 variants=(
 [light]="arch-simple.png"
+[geometric]="arch-simple-geometric.png"
 )
