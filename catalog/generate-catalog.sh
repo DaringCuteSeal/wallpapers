@@ -155,7 +155,7 @@ cat > "$out_html" << EOF
 	<meta charset=utf-8>
 </head>
 <body>
-	<p><a href="/">Home</a></p>
+	<p><a href="https://daringcuteseal.github.io">Home</a></p>
 	<p>This is a catalog of my wallpeppers. You can also visit my <a href="https://github.com/DaringCuteSeal/wallpapers">GitHub repository</a> directly.</p>
 
 	<p>
