@@ -26,14 +26,13 @@ jobs:
       - uses: actions/checkout@v3
        
       - name: Generate catalog
-        run: catalog/generate-catalog.sh output
+        run: catalog/generate-catalog.sh output; ls 
         
       # Runs a single command using the runners shell
       - name: Deploy page
         uses: sterlingwes/gh-pages-deploy-action@v1.1
         with:
-          build-command: bash catalog/generate-catalog.sh output
-          source-directory: output
+          build-command: ls
           access-token: ${{ secrets.GENERATOR_PAT }}
           deploy-branch: main
           custom-domain: wallpapers.daringcuteseal.xyz
