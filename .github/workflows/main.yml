@@ -31,8 +31,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Deploy page
-        uses: peaceiris/actions-github-pages@v3.1.12
+        uses: sterlingwes/gh-pages-deploy-action@v1.1
         with:
-          publish_branch: main
-          publish_dir: catalog/out
-          personal_token: ${{ secrets.GENERATOR_PAT }}
+          build-command: catalog/generate-catalog.sh
+          source-directory: catalog/out
+          access-token: ${{ secrets.GENERATOR_PAT }}
+          deploy-branch: main
+          custom-domain: wallpapers.daringcuteseal.xyz
