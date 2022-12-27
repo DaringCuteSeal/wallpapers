@@ -31,9 +31,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Deploy page
-        uses: ./
+        uses: peaceiris/actions-github-pages@v3.1.12
         with:
-          username: DaringCuteSeal
-          password: ${{ secrets.GENERATOR_PAT }}
-          remote_url: https://github.com/DaringCuteSeal/wallpapers.git
-          target_directory: catalog/out
+          publish_dir: catalog/out
+          personal_token: ${{ secrets.GENERATOR_PAT }}
