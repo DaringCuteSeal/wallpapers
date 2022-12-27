@@ -30,7 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Generate catalog
-        run: bash catalog/generate-catalog output
+        run: bash catalog/generate-catalog.sh output
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1.0.7
         with:
