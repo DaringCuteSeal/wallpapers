@@ -121,7 +121,7 @@ mkdir -p "$out_dir" || exit $?
 
 # Copy extra files
 work "Copying files..."
-cp "$dir/styles.css" "$dir/events.js" "$out_dir"
+cp "$dir/theme.css" "$dir/styles.css" "$dir/events.js" "$out_dir"
 print_done
 
 # Setup directory for the document output
