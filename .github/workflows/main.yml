@@ -1,6 +1,5 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy generated wallpaper catalog page
-
+# Sample workflow for building and deploying a Jekyll site to GitHub Pages
+name: Deploy generated catalog page
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -11,7 +10,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -21,23 +20,30 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build
+        run: bash catalog/generate-catalog.sh ./output
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+         path: output
+         name: wallpaper-catalog
+
+  # Deployment job
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    needs: build
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Generate catalog
-        run: bash catalog/generate-catalog.sh output
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1.0.7
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
         with:
-           path: output
-           name: wallpapers
-      - name: Deploy page
-        uses: actions/deploy-pages@v1.2.3
-        with:
-           token: ${{ secrets.GENERATOR_PAT }}
-           artifact_name: wallpapers
+           artifact_name: wallpaper-catalog
