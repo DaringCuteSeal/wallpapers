@@ -150,7 +150,7 @@ cat > "$out_html" << EOF
 <head>
 	<title>Wallpapers catalog</title>
 	<link rel="stylesheet" href="styles.css">
-	<link rel="stylesheet" href="/index.css">
+	<link rel="stylesheet" href="theme.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset=utf-8>
 </head>

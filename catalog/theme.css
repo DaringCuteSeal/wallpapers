@@ -1,0 +1,42 @@
+@font-face {
+	font-family: "Ubuntu";
+	src: url("/assets/fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype"),
+	     url("/assets/fonts/ubuntu/Ubuntu-Italic.ttf") format("truetype"),
+	     url("/assets/fonts/ubuntu/Ubuntu-Bold.ttf") format("truetype");
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #2A303D;
+		color: #D4EEFC;
+	}
+	a {
+		color: #8BBFDF;
+	}
+	hr { 
+		color: #9BAEB8;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+		background-color: #EEF3F7;
+	}
+	a {
+		color: #3B84B1;
+	}
+	
+}
+
+body {
+	font-family: Ubuntu;
+	font-size: large;
+}
+
+pre {
+	overflow: auto;
+}
+
+img {
+	max-width: 100%;
+}
