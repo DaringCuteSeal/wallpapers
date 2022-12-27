@@ -1,39 +1,43 @@
-# This is a basic workflow to help you get started with Actions
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy generated wallpaper catalog page
 
-name: Generate catalog
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # Runs on pushes targeting the default branch
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: ["gh-pages"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-       
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Generate catalog
-        run: catalog/generate-catalog.sh output; ls 
-        
-      # Runs a single command using the runners shell
-      - name: Deploy page
-        uses: sterlingwes/gh-pages-deploy-action@v1.1
+        run: bash catalog/generate-catalog output
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1.0.7
         with:
-          build-command: bash ./catalog/generate-catalog.sh output
-          source-directory: output
-          access-token: ${{ secrets.GENERATOR_PAT }}
-          deploy-branch: gh-pages
-          custom-domain: wallpapers.daringcuteseal.xyz
+           path: output
+           name: wallpapers
+      - name: Deploy page
+        uses: actions/deploy-pages@v1.2.3
+        with:
+           token: ${{ secrets.GENERATOR_PAT }}
+           artifact_name: wallpapers
