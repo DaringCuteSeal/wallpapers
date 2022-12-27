@@ -1,8 +1,8 @@
 @font-face {
 	font-family: "Ubuntu";
-	src: url("/assets/fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype"),
-	     url("/assets/fonts/ubuntu/Ubuntu-Italic.ttf") format("truetype"),
-	     url("/assets/fonts/ubuntu/Ubuntu-Bold.ttf") format("truetype");
+	src: url("https://daringcuteseal.xyz/assets/fonts/ubuntu/Ubuntu-Regular.ttf") format("truetype"),
+	     url("https://daringcuteseal.xyz/assets/fonts/ubuntu/Ubuntu-Italic.ttf") format("truetype"),
+	     url("https://daringcuteseal.xyz/assets/fonts/ubuntu/Ubuntu-Bold.ttf") format("truetype");
 }
 
 @media (prefers-color-scheme: dark) {
