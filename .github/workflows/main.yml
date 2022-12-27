@@ -25,7 +25,7 @@ jobs:
       - name: Deploy page
         uses: sterlingwes/gh-pages-deploy-action@v1.1
         with:
-          build-command: catalog/generate-catalog.sh
+          build-command: bash catalog/generate-catalog.sh
           source-directory: catalog/out
           access-token: ${{ secrets.GENERATOR_PAT }}
           deploy-branch: main
