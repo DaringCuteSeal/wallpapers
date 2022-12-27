@@ -33,6 +33,7 @@ jobs:
         uses: sterlingwes/gh-pages-deploy-action@v1.1
         with:
           build-command: ls
+          source-directory: output
           access-token: ${{ secrets.GENERATOR_PAT }}
           deploy-branch: main
           custom-domain: wallpapers.daringcuteseal.xyz
