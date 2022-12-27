@@ -33,5 +33,6 @@ jobs:
       - name: Deploy page
         uses: peaceiris/actions-github-pages@v3.1.12
         with:
+          publish_branch: main
           publish_dir: catalog/out
           personal_token: ${{ secrets.GENERATOR_PAT }}
