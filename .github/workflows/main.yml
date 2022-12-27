@@ -32,8 +32,8 @@ jobs:
       - name: Deploy page
         uses: sterlingwes/gh-pages-deploy-action@v1.1
         with:
-          build-command: ls
+          build-command: bash ./catalog/generate-catalog.sh output
           source-directory: output
           access-token: ${{ secrets.GENERATOR_PAT }}
-          deploy-branch: main
+          deploy-branch: gh-pages
           custom-domain: wallpapers.daringcuteseal.xyz
