@@ -1,5 +1,5 @@
 name="RHEL - Simple"
-parsable_name="rocky-simple"
+parsable_name="rhel-simple"
 desc="Simple RHEL-branded wallpaper."
 
 category="os"
