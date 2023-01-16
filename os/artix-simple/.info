@@ -1,0 +1,9 @@
+name="Artix - Simple"
+parsable_name="artix-simple"
+desc="Simple Artix Linux-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="artix-simple-geometric.png"
+)

@@ -1,0 +1,10 @@
+name="Windows - Geometric"
+parsable_name="windows-simple"
+desc="Simple Windows-branded wallpaper."
+
+category="os"
+
+variants=(
+[windows10]="w10-simple-geometric.png"
+[windows11]="w11-simple-geometric.png"
+)

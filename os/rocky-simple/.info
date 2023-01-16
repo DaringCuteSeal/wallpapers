@@ -1,0 +1,9 @@
+name="Rocky - Simple"
+parsable_name="rocky-simple"
+desc="Simple Rocky Linux-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="rocky-simple-geometric.png"
+)

@@ -1,0 +1,9 @@
+name="Void - Simple"
+parsable_name="void-simple"
+desc="Simple Void Linux-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="void-simple-geometric.png"
+)

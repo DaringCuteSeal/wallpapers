@@ -1,0 +1,9 @@
+name="RHEL - Simple"
+parsable_name="rocky-simple"
+desc="Simple RHEL-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="rhel-simple-geometric.png"
+)

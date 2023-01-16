@@ -1,0 +1,9 @@
+name="Ubuntu - Simple"
+parsable_name="ubuntu-simple"
+desc="Simple Ubuntu Linux-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="ubuntu-simple-geometric.png"
+)
