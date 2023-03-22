@@ -1,0 +1,9 @@
+name="Manjaro - Geometric"
+parsable_name="manjaro-simple"
+desc="Simple Manjaro-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="manjaro-simple-geometric.png"
+)

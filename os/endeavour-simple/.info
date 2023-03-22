@@ -1,0 +1,9 @@
+name="EndeavourOS - Geometric"
+parsable_name="endeavour-simple"
+desc="Simple EndeavourOS-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="endeavouros-simple-geometric.png"
+)

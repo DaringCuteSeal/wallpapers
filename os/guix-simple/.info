@@ -1,0 +1,9 @@
+name="Guix - Geometric"
+parsable_name="guix-simple"
+desc="Simple Guix-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="guix-simple-geometric.png"
+)

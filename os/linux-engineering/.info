@@ -1,0 +1,9 @@
+name="Linux Engineering"
+parsable_name="linux-engineering"
+desc="A penguin compiling LFS. Made a day after I finished compiling LFS."
+
+category="os"
+
+variants=(
+[light]="linux-engineering.png"
+)

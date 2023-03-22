@@ -1,0 +1,9 @@
+name="Fedora - Geometric"
+parsable_name="fedora-simple"
+desc="Simple Fedora-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="fedora-simple-geometric.png"
+)

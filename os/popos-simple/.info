@@ -1,0 +1,9 @@
+name="PopOS - Geometric"
+parsable_name="popos-simple"
+desc="Simple Pop_OS!-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="popos-simple-geometric.png"
+)

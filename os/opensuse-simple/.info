@@ -1,0 +1,10 @@
+name="OpenSUSE - Geometric"
+parsable_name="opensuse-simple"
+desc="Simple OpenSUSE-branded wallpaper"
+
+category="os"
+
+variants=(
+[geometric-symbolic]="opensuse-simple-geometric-symbolic.png"
+[geometric-geeko]="opensuse-simple-geometric.png"
+)

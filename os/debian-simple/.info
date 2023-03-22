@@ -1,0 +1,10 @@
+name="Debian - Geometric"
+parsable_name="debian-simple"
+desc="Simple Debian-branded wallpaper, one of which was contributed by <a href="https://github.com/illegitimate-egg">illegitimate-egg</a>."
+
+category="os"
+
+variants=(
+[geometric]="debian-simple-geometric.png"
+[geometric-simpler]="debian-simple-geometric-illegitimate-egg.png"
+)

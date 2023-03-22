@@ -1,0 +1,9 @@
+name="Linux Mint - Geometric"
+parsable_name="linuxmint-simple"
+desc="Simple Linux Mint-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="linuxmint-simple-geometric.png"
+)

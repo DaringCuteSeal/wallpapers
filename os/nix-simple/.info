@@ -1,0 +1,9 @@
+name="NixOS - Geometric"
+parsable_name="nixos-geometric"
+desc="Simple NixOS-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="opensuse-simple-geometric.png"
+)

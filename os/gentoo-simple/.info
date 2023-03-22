@@ -1,0 +1,9 @@
+name="Gentoo - Geometric"
+parsable_name="gentoo-simple"
+desc="Simple Gentoo-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="gentoo-simple-geometric.png"
+)
