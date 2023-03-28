@@ -1,0 +1,9 @@
+name="Forbidden Spell (Void Linux)"
+parsable_name="void-forbidden-spell"
+desc="A brave and curious penguin tries to touch the forbidden spell book."
+
+category="os"
+
+variants=(
+[geometric]="void-forbidden-spell.png"
+)
