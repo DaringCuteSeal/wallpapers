@@ -1,0 +1,1 @@
+Puffy, the OpenBSD mascot.
