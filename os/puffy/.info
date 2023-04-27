@@ -1,0 +1,10 @@
+name="Geometric Puffy"
+parsable_name="puffy"
+desc="Low-poly Puffy (from OpenBSD) in plain background."
+
+category="os"
+
+variants=(
+[dark]="puffy-dark.png"
+[light]="puffy-light.png"
+)

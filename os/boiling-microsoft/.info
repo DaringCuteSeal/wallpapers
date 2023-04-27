@@ -1,0 +1,10 @@
+name="Boiling Microsoft"
+parsable_name="boiling-microsoft"
+desc="Tux and Beastie boiling Microsoft. A meme but it's super artistic and wallpaper-able."
+
+category="os"
+
+variants=(
+[light]="boiling-microsoft.png"
+[dark]="boiling-microsoft-dark.png"
+)

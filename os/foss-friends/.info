@@ -1,0 +1,10 @@
+name="FOSS Friends"
+parsable_name="foss-friends"
+desc="Low poly Puffy, Beastie, and Tux holding hands."
+
+category="os"
+
+variants=(
+[light]="foss-friends-light.png"
+[dark]="foss-friends-dark.png"
+)

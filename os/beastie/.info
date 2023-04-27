@@ -1,0 +1,11 @@
+name="Geometric Beastie"
+parsable_name="beastie"
+desc="Low-poly Beastie (from FreeBSD) in plain background."
+
+category="os"
+
+variants=(
+[dark-velvet]="beastie-dark-velvet.png"
+[light]="beastie-light.png"
+[dark-reflective]="beastie-dark-reflective.png"
+)
