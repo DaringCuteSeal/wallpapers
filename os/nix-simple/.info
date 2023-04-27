@@ -5,5 +5,5 @@ desc="Simple NixOS-branded wallpaper."
 category="os"
 
 variants=(
-[geometric]="opensuse-simple-geometric.png"
+[geometric]="nix-simple-geometric.png"
 )
