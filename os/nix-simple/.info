@@ -1,5 +1,5 @@
 name="NixOS - Geometric"
-parsable_name="nixos-geometric"
+parsable_name="nix-simple"
 desc="Simple NixOS-branded wallpaper."
 
 category="os"
