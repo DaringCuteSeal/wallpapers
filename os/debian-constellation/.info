@@ -1,0 +1,9 @@
+name="Constellation: Debian"
+parsable_name="debian-constellation"
+desc="Constellation of Debian."
+
+category="os"
+
+variants=(
+[corner]="debian-constellation.png"
+)

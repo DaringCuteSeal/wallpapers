@@ -1,0 +1,9 @@
+name="Beach"
+parsable_name="beach"
+desc="Painting of a beach at Lampung, Indonesia :)"
+
+category="nature"
+
+variants=(
+[default]="beach.png"
+)

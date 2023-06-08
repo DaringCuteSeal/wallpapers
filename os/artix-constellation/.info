@@ -1,0 +1,9 @@
+name="Constellation: Artix"
+parsable_name="artix-constellation"
+desc="Constellation of Artix."
+
+category="os"
+
+variants=(
+[corner]="artix-constellation.png"
+)

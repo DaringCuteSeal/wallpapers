@@ -1,0 +1,10 @@
+name="Succulents"
+parsable_name="succulents"
+desc="Low poly succulents."
+
+category="nature"
+
+variants=(
+[cactus]="cactus.png"
+[howarthia]="howarthia.png"
+)

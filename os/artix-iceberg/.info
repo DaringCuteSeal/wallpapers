@@ -1,0 +1,10 @@
+name="Artix Iceberg"
+parsable_name="artix-iceberg"
+desc="\"Kinda incohesive but still works like a charm!\""
+
+category="os"
+
+variants=(
+[dark]="artix-iceberg-dark.png"
+[light]="artix-iceberg-light.png"
+)

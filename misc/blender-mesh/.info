@@ -1,0 +1,9 @@
+name="Blender Mesh"
+parsable_name="blender-mesh"
+desc="Abstract blender mesh."
+
+category="misc"
+
+variants=(
+[default]="blender-mesh.png"
+)

@@ -1,0 +1,11 @@
+name="Tux - Geometric"
+parsable_name="tux-geometric"
+desc="Simple low poly Tux wallpaper."
+
+category="os"
+
+variants=(
+[dark]="tux-geometric-dark.png"
+[dark-velvet]="tux-geometric-velvet.png"
+[light]="tux-geometric-light.png"
+)
