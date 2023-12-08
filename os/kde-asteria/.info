@@ -1,0 +1,12 @@
+name="KDE - Asteria"
+parsable_name="kde-asteria"
+desc="Submission 3 for Plasma 6.0 wallpapers (I lost tho)"
+
+category="os"
+
+variants=(
+[desktop_dark]="asteria-dark.png"
+[desktop_light]="asteria-light.png"
+[vert_dark]="asteria-dark-vert.png"
+[vert_light]="asteria-light-vert.png"
+)

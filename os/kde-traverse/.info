@@ -1,0 +1,12 @@
+name="KDE - Traverse"
+parsable_name="kde-traverse"
+desc="Submission 1 for Plasma 6.0 wallpapers (I lost tho)"
+
+category="os"
+
+variants=(
+[desktop_dark]="traverse-dark.png"
+[desktop_light]="traverse-light.png"
+[vert_dark]="traverse-dark-portrait.png"
+[vert_light]="traverse-light-portrait.png"
+)

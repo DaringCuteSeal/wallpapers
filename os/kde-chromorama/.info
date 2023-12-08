@@ -1,0 +1,12 @@
+name="KDE - Chromorama"
+parsable_name="kde-chromorama"
+desc="Submission 2 for Plasma 6.0 wallpapers (I lost tho)"
+
+category="os"
+
+variants=(
+[desktop_dark]="chromorama-dark.png"
+[desktop_light]="chromorama-light.png"
+[vert_dark]="chromorama-dark-vert.png"
+[vert_light]="chromorama-light-vert.png"
+)
