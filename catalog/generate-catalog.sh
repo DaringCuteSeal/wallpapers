@@ -312,7 +312,7 @@ EOF
 
 			write "<br>\n" 4
 
-			write "<b>Links:</b> " 3
+			write "<b>Images:</b> " 3
 
 			m=0
 			for l in "${!variants[@]}"
