@@ -1,0 +1,9 @@
+name="Libre Store"
+parsable_name="libre-store"
+desc="A young adventurer had found his way to the Linux Avenue."
+
+category="os"
+
+variants=(
+[default]="libre-store.png"
+)
