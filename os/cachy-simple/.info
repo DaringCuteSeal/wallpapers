@@ -1,0 +1,9 @@
+name="CachyOS - Geometric"
+parsable_name="cachy-simple"
+desc="Simple CachyOS-branded wallpaper."
+
+category="os"
+
+variants=(
+[geometric]="cachy-simple-geometric.png"
+)
