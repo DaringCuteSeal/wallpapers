@@ -1,0 +1,16 @@
+name="System (Tuxler)"
+parsable_name="tuxler-system"
+desc="Another source code investigation?"
+
+category="os"
+
+variants=(
+[purple-original]="purple-original.png"
+[red-original]="red-original.png"
+[grey-original]="grey-original.png"
+[green-original]="green-original.png"
+[blue-original]="blue-original.png"
+[blue-w-icons]="blue-with-icons.png"
+[blue-w-icons-name]="blue-icons-and-name.png"
+[transparent]="transparent.png"
+)

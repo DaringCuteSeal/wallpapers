@@ -226,7 +226,7 @@ do
 			# Generate the preview image
 
 			subwork "Generating preview for $filename... "
-			convert -geometry 590x331 "$dir/../$category/$parsable_name/$filename" "$out_dir/previews/${filename%*.png}-preview.webp"
+			magick "$dir/../$category/$parsable_name/$filename" -geometry 590x331 "$out_dir/previews/${filename%*.png}-preview.webp"
 			print_done
 		fi
 
