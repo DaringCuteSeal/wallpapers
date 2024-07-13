@@ -312,20 +312,8 @@ EOF
 
 			write "<br>\n" 4
 
-			write "<b>Images:</b> " 3
-
-			m=0
-			for l in "${!variants[@]}"
-			do
-				write "<a href=\"https://raw.githubusercontent.com/DaringCuteSeal/wallpapers/main/$category/$parsable_name/${variants[$l]}\">${variants[$l]} ($l)</a>"
-				m=$(($m+1))
-				if [[ $m -lt ${#variants[@]} ]]
-				then
-					write " &bull; "
-				fi
-			done
+			write "<button id=\"$parsable_name-download\" class=\"download-btn\">Download Variant</button>" 4
 			write "\n</p>\n"
-			unset m
 
 			write_stdin << EOF
 			<p>
@@ -376,6 +364,22 @@ vars_str(){
 	unset k
 }
 
+filenames_str(){
+	echo -n "["
+	k=0
+	for j in "${variants[@]}"
+	do
+		echo -n "'$j'"
+		k=$(($k+1))
+		if [[ $k -lt ${#variants[@]} ]]
+		then
+			echo -n ", "
+		fi
+	done
+	echo -n "]"
+	unset k
+}
+
 work "Generating previews JSON..." # and yes it isn't JSON but hey it's called "JavaScript Object Notation" so...
 cat > "$out_previews" <<< "var previews = ["
 
@@ -388,10 +392,13 @@ do
 	write_js_stdin << EOF
 	{
 		'name': '$parsable_name',
+		'category': '$category',
 EOF
 
 	m=$(($m+1))
-	write_js "'variants': `vars_str`\n" 2
+	write_js "'variants': $(vars_str),\n" 2
+
+	write_js "'variants_filename': $(filenames_str)\n" 2
 	write_js "}" 1
 
 	if [[ $m -lt ${#infos[@]} ]]

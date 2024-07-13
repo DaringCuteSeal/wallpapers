@@ -1,25 +1,36 @@
+const REPO_URL = "https://raw.githubusercontent.com/DaringCuteSeal/wallpapers"
+const BRANCH = "gh-pages"
+//https://raw.githubusercontent.com/DaringCuteSeal/wallpapers/main/os/artix-iceberg/artix-iceberg-light.png
+
 /* Create a new preview object */
-var preview = function(name, variants)
-{
-	this.name = name;
-	this.variants = variants;
-}
+class preview {
+	constructor(name, variants, variants_filename, category) {
+		this.name = name;
+		this.variants = variants;
+		this.category = category;
+		this.variants_filename = variants_filename;
+		this.selected_variant = 0;
+	}
+	/* Show image based on given index */
+	showImg(n) {
+		this.selected_variant = n;
+		this.imgs = document.getElementsByClassName("preview-img-" + this.name);
+		this.nImgs = this.imgs.length;
 
+		/* Hide every image */
+		for (let i = 0; i < this.nImgs; i++) {
+			this.imgs[i].style.display = "none";
+		}
 
-/* Show image based on given index */
-preview.prototype.showImg = function(n) 
-{
-	this.imgs = document.getElementsByClassName("preview-img-" + this.name);
-	this.nImgs = this.imgs.length;
-
-	/* Hide every image */
-	for(i = 0; i < this.nImgs; i++)
-	{
-		this.imgs[i].style.display = "none";
+		/* Show image based on given index */
+		this.imgs[n].style.display = "block";
 	}
 
-	/* Show image based on given index */
-	this.imgs[n].style.display = "block";
+	/* Open high-resolution image in new tab */
+	openImageInNewTab() {
+		window.open(REPO_URL + "/" + BRANCH + "/" + this.category + "/" + this.name + "/" + this.variants_filename[this.selected_variant])
+	}
+
 }
 
 /* Attach event listeners to each preview */
@@ -32,7 +43,7 @@ for (let j = 0; j < previews.length; j++)
 
 	variantBtns[j] = document.getElementsByClassName(current_name + '-vars');
 	
-	imgPreview[j] = new preview(current_name, previews[j].variants);
+	imgPreview[j] = new preview(current_name, previews[j].variants, previews[j].variants_filename, previews[j].category);
 
 	for(let k = 0; k < variantBtns[j].length; k++)
 	{
@@ -57,8 +68,12 @@ for (let j = 0; j < previews.length; j++)
 		/* Make the first button inactive */
 		variantBtns[j][0].classList.add('btn-var-curr');
 
-
 	}
+
+	document.getElementById(current_name + '-download').addEventListener('click', function()
+		{
+			imgPreview[j].openImageInNewTab()
+		})
 }
 
 /* Copy link to image to user's clipboard */

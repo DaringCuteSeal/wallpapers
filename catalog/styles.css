@@ -1,5 +1,3 @@
-
-
 @media (prefers-color-scheme: dark) {
 	.btn-var-curr {
 		background-color: #3B4656;
@@ -18,6 +16,21 @@
 		transition: 0.1s ease;
 		background-color: #445062;
 	}
+	
+
+  .download-btn {
+		font-weight: bold;
+		background-color: #46726B;
+  	font-size: 100%;
+		padding: 10px;
+		margin-top: 1em;
+  }
+	
+  .download-btn:hover {
+		background-color: #334D49;
+  }
+
+
 }
 
 @media (prefers-color-scheme: light) {
@@ -39,6 +52,19 @@
 		transition: 0.1s ease;
 		background-color: #9FA2A5;
 	}
+	
+  .download-btn {
+		font-weight: bold;
+		background-color: #68AFA3;
+  	font-size: 100%;
+		padding: 10px;
+		margin-top: 1em;
+  }
+	
+  .download-btn:hover {
+		background-color: #58847D;
+  }
+
 }
 
 
