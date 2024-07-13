@@ -1,6 +1,5 @@
 const REPO_URL = "https://raw.githubusercontent.com/DaringCuteSeal/wallpapers"
 const BRANCH = "gh-pages"
-//https://raw.githubusercontent.com/DaringCuteSeal/wallpapers/main/os/artix-iceberg/artix-iceberg-light.png
 
 /* Create a new preview object */
 class preview {
