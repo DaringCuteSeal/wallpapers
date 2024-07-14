@@ -1,0 +1,10 @@
+name="Booting (Tuxler)"
+parsable_name="tuxler-booting"
+desc="Let's.. load the heart of our favorite operating system! (looks cute with the loading Linux <kernel name> message)"
+
+category="os"
+
+variants=(
+[blue-original]="booting-blue-original.png"
+[transparent]="booting-transparent.png"
+)
