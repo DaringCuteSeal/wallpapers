@@ -219,7 +219,7 @@ do
 		# Get the file name based on the variant
 		filename="${variants[$j]}"
 
-		if [[ -e "$out_dir/previews/${filename%*.png}-preview.webp" ]]
+		if [[ -e "$out_dir/previews/$parsable_name-${filename%*.*}-preview.webp" ]]
 		then
 			subinfo "Preview for $filename already exists, skipping..."
 		else
@@ -227,7 +227,7 @@ do
 
 			subwork "Generating preview for $filename... "
 			#magick "$dir/../$category/$parsable_name/$filename" -geometry 590x331 "$out_dir/previews/${filename%*.png}-preview.webp"
-			convert "$dir/../$category/$parsable_name/$filename" -geometry 590x331 "$out_dir/previews/${filename%*.png}-preview.webp"
+			convert "$dir/../$category/$parsable_name/$filename" -geometry 590x331 "$out_dir/previews/$parsable_name-${filename%*.*}-preview.webp"
 			print_done
 		fi
 
@@ -293,7 +293,7 @@ do
 EOF
 			for l in "${!variants[@]}"
 			do
-				write "<img class=\"preview-img-$parsable_name\" src=\"previews/${variants[$l]%*.png}-preview.webp\" alt=\"$name ($l)\" title=\"$name ($l)\">\n" 3
+				write "<img class=\"preview-img-$parsable_name\" src=\"previews/$parsable_name-${variants[$l]%*.*}-preview.webp\" alt=\"$name ($l)\" title=\"$name ($l)\">\n" 3
 
 			done
 

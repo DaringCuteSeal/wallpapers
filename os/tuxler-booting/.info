@@ -1,6 +1,6 @@
 name="Booting (Tuxler)"
 parsable_name="tuxler-booting"
-desc="Let's.. load the heart of our favorite operating system! (looks cute with the loading Linux <kernel name> message)"
+desc="Let's.. load the heart of our favorite operating system! (looks cute with the loading Linux &lt;kernel name&gt; message)"
 
 category="os"
 
