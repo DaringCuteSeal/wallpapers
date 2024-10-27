@@ -1,0 +1,9 @@
+name="Ferris at Beach"
+parsable_name="ferris-beach"
+desc="Ferris at the beach."
+
+category="programming"
+
+variants=(
+[light]="ferris-beach.png"
+)
