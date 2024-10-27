@@ -1,0 +1,9 @@
+name="Melody in Harmony"
+parsable_name="melody-in-harmony"
+desc="World wallpaper render from my short animation. Made for \"Mozaik Cinta\", a theatrical performance."
+
+category="misc"
+
+variants=(
+[default]="wallpaper.png"
+)
