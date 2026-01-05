@@ -226,7 +226,7 @@ do
 			# Generate the preview image
 
 			subwork "Generating preview for $filename... "
-			magick "$dir/../$category/$parsable_name/$filename" -resize 590x331 -background none -gravity center -extent 590x331 "$out_dir/previews/$parsable_name-${filename%*.*}-preview.webp"
+			convert "$dir/../$category/$parsable_name/$filename" -resize 590x331 -background none -gravity center -extent 590x331 "$out_dir/previews/$parsable_name-${filename%*.*}-preview.webp"
 
 			print_done
 		fi
