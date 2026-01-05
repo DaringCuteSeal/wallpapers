@@ -1,0 +1,10 @@
+name="Eclipse"
+parsable_name="eclipse"
+desc="A pixel-style wallpaper inspired by Linus Torvalds' photograph he used as his wallpaper."
+
+category="misc"
+
+variants=(
+[dark]="eclipse.png"
+[dark-original]="eclipse-original.png"
+)
