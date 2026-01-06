@@ -6,5 +6,6 @@ category="misc"
 
 variants=(
 [dark]="eclipse.png"
+[dark-vignette]="eclipse-vignette.png"
 [dark-original]="eclipse-original.png"
 )
