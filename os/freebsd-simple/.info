@@ -1,0 +1,10 @@
+name="FreeBSD - Geometric"
+parsable_name="freebsd-simple"
+desc="Simple FreeBSD-branded wallpaper."
+
+category="os"
+
+variants=(
+[light_grey]="freebsd-simple-light-grey.png"
+[grey]="freebsd-simple-grey.png"
+)
