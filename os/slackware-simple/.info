@@ -1,0 +1,9 @@
+name="Slackware - Geometric"
+parsable_name="slackware-simple"
+desc="Simple Slackware-branded wallpaper."
+
+category="os"
+
+variants=(
+[default]="slackware-simple.png"
+)
