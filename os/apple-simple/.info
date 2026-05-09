@@ -1,0 +1,10 @@
+name="Apple - Geometric"
+parsable_name="apple-simple"
+desc="Simple Apple-branded wallpaper."
+
+category="os"
+
+variants=(
+[blue_grey]="apple-simple-blue-grey.png"
+[grey]="apple-simple-grey.png"
+)
