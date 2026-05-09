@@ -1,5 +1,5 @@
 # About
-This is a repo for my original wallpapers.
+This is a repo for my original wallpapers. [Visit the catalog!](https://daringcuteseal.github.io/wallpapers)
 
 All images and .blend files are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), except anything on `resources`. Scripts on [catalog](catalog) are licensed under GPL-3.0.
 
